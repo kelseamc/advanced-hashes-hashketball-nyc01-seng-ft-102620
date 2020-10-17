@@ -134,6 +134,7 @@ def player_level
       player_info[(key[:player_name])] = key
     end
   end
+  player_info
 end
 binding.pry
 def num_points_scored(player)
