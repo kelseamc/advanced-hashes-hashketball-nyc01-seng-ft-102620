@@ -140,12 +140,10 @@ end
 def num_points_scored(player)
   game_hash.each do |h_or_a|
     game_hash[h_or_a][:players].each do |key|
-     game_hash[h_or_a][:players][key[:players_name]].each do |name|
-       if name == player
-        return game_hash[h_or_a][:players][key[:points]]
+       if key[:player_name] == player
+        return key[:points]
        end
      end
-    binding.pry
     end
   end
 end
