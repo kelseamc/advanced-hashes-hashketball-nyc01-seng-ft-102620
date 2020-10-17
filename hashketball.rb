@@ -165,10 +165,12 @@ def shoe_size(player)
   end
 end
 
-def player_numbers(player)
+def player_numbers(team)
+  jersey_numbers = []
   player_data.each do |key, value|
-    if value[:player_name] == player
-     return value[:number]
+    if value[:team_name] == team
+      jersey_numbers << value[:number]
     end
   end
+  jersey_numbers
 end
