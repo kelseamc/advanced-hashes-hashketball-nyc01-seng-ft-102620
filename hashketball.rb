@@ -196,11 +196,13 @@ def big_shoe_rebounds
     end
 end
 
-
 def team_colors(team)
   game_hash.each do |key, value|
     if value[:team_name] == team
       return value[:colors]
     end
   end
+end
+
+def team_names
 end
