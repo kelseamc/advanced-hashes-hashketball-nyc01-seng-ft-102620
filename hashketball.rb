@@ -162,3 +162,11 @@ def shoe_size(player)
     end
   end
 end
+
+def player_numbers(player)
+  player_data.each do |key, value|
+    if value[:player_name] == player
+     return value[:number]
+    end
+  end
+end
