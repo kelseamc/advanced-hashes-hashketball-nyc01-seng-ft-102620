@@ -138,11 +138,11 @@ def player_level
 end
 
 def num_points_scored(player)
-  player_level
-  game_hash.each do |h_or_a, value1|
+  game_hash.each do |h_or_a|
     game_hash[h_or_a][:players].each do |key|
-      if game_hash[h_or_a][:players][key][:players_name] == player
-        return game_hash[h_or_a][:players][key][:points]
+     game_hash[h_or_a][:players][key[:players_name]].each do |name|
+       if name == player
+        return game_hash[h_or_a][:players][key[:points]]
       end
     end
   end
