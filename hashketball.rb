@@ -129,10 +129,11 @@ end
 
 def player_data
   player_info = {}
-game_hash[:home][:players].each do |hash|
+  game_hash[:home][:players].each do |hash|
   player_info[(hash[:player_name])] = hash[:player_name]
     hash.each_with_object({}) do |(k, v), a|
      a[k] = v
+     a[:team_name] = "Brooklyn Nets"
      player_info[(hash[:player_name])] = a
     end
   end
@@ -141,6 +142,7 @@ game_hash[:home][:players].each do |hash|
   player_info[(hash[:player_name])] = hash[:player_name]
     hash.each_with_object({}) do |(k, v), a|
      a[k] = v
+     a[:team_name] = "Charlotte Hornets"
      player_info[(hash[:player_name])] = a
     end
   end
