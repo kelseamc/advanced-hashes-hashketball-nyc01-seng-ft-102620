@@ -127,6 +127,15 @@ def game_hash
   }
 end
 
+def player_level
+  player_info = {}
+  game_hash.each do |sides|
+    game_hash[sides][:players].each do |key, value|
+      player_info = {key}
+    binding.pry
+    end
+  end
+end
 def num_points_scored(player)
   game_hash.each do |h_or_a, value1|
     game_hash[h_or_a][:players].each do |key|
