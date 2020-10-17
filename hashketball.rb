@@ -183,3 +183,16 @@ def player_stats(player)
     end
   end
 end
+
+def big_shoe_rebounds
+  size = []
+  player_data.each do |key, value|
+    size << value[:shoe]
+  end
+    player_data.each do |key, value|
+      if value[:shoe] == size.max
+        return value[:rebounds]
+      end
+    end
+  
+end
