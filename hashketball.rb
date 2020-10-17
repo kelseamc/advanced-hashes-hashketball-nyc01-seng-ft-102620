@@ -145,6 +145,7 @@ def num_points_scored(player)
         return game_hash[h_or_a][:players][key[:points]]
        end
      end
+    binding.pry
     end
   end
 end
