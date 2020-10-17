@@ -131,7 +131,7 @@ def player_level
   player_info = {}
   game_hash.each do |sides|
     game_hash[sides][:players].each do |key|
-      player_info[key[:player_name]] = key
+      player_info[(key[:player_name])] = key
     binding.pry
     end
   end
