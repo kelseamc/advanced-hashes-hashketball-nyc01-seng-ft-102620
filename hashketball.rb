@@ -209,5 +209,5 @@ def team_names
   game_hash.each do |key, value|
     teams << value[:team_name]
   end
-  returns teams
+  return teams
 end
