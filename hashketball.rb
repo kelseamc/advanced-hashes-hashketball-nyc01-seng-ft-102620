@@ -175,5 +175,10 @@ def player_numbers(team)
   jersey_numbers
 end
 
-def team_names
+def player_stats(player)
+ player_data.each do |key, value|
+    if value[:player_name] == player
+      return key
+    end
+  end
 end
