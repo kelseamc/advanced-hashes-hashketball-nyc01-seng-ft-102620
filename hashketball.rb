@@ -127,22 +127,25 @@ def game_hash
   }
 end
 
-def player_level
+def player_data
   player_info = {}
-  game_hash.each do |sides|
-    game_hash[sides][:players].each do |key|
-      player_info[(key[:player_name])] = key
+game_hash[:home][:players].each do |hash|
+  player_info[(hash[:player_name])] = hash[:player_name]
+    hash.each_with_object({}) do |(k, v), a|
+     a[k] = v
+     player_info[(hash[:player_name])] = a
     end
   end
   player_info
+  game_hash[:away][:players].each do |hash|
+  player_info[(hash[:player_name])] = hash[:player_name]
+    hash.each_with_object({}) do |(k, v), a|
+     a[k] = v
+     player_info[(hash[:player_name])] = a
+    end
+  end
+  return player_info
 end
 
 def num_points_scored(player)
-  game_hash.each do |h_or_a|
-    h_or_a[:players].each do |key|
-       if key[:player_name] == player
-        return key[:points]
-     end
-    end
-  end
-end
+  
