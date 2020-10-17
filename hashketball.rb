@@ -136,7 +136,7 @@ def player_level
   end
   player_info
 end
-binding.pry
+
 def num_points_scored(player)
   player_level
   game_hash.each do |h_or_a, value1|
